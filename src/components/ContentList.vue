@@ -1,9 +1,16 @@
+<!--
+ * @Author: mrlthf11
+ * @LastEditors: mrlthf11
+ * @Date: 2020-10-29 19:55:58
+ * @LastEditTime: 2020-10-29 21:29:32
+ * @Description: file content
+-->
 <template>
 	<div class="contentList">
-		<li v-for="(v,i) in list" :key="i">
+		<li v-for="(v, i) in list" :key="i">
 			<div class="row1">
-				<div>{{v.jobs}}</div>
-				<div>{{v.salary}}</div>
+				<div>{{ v.jobs }}</div>
+				<div>{{ v.salary }}</div>
 			</div>
 			<div class="row2">
 				<div v-if="v.isSelfEmployed" class="selfEmployed">自营</div>
@@ -11,8 +18,8 @@
 				<div v-if="v.isFreeFood" class="freeFood">包吃</div>
 			</div>
 			<div class="row3">
-				<div>{{v.company}}</div>
-				<div>{{v.area}}</div>
+				<div>{{ v.company }}</div>
+				<div>{{ v.area }}</div>
 			</div>
 		</li>
 	</div>
