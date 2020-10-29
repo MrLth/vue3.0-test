@@ -1,0 +1,62 @@
+$vm_fontsize: 75;
+$vm_design: 750;
+@function rem($px) {
+	@return ($px/$vm_fontsize) * 1rem;
+}
+
+html {
+	font-size: ($vm_fontsize/($vm_design/2)) * 100vw;
+	@media screen and (max-width: 320px) {
+		font-size: 64px;
+	}
+	@media screen and (min-width: 540px) {
+		font-size: 108px;
+	}
+}
+
+body {
+	max-width: 540px;
+	min-width: 320px;
+	font-size: rem(16);
+}
+
+@font-face {
+	font-family: 'iconfont'; /* project id 2165213 */
+	src: url('//at.alicdn.com/t/font_2165213_x9u1ircxxbq.eot');
+	src: url('//at.alicdn.com/t/font_2165213_x9u1ircxxbq.eot?#iefix')
+			format('embedded-opentype'),
+		url('//at.alicdn.com/t/font_2165213_x9u1ircxxbq.woff2') format('woff2'),
+		url('//at.alicdn.com/t/font_2165213_x9u1ircxxbq.woff') format('woff'),
+		url('//at.alicdn.com/t/font_2165213_x9u1ircxxbq.ttf') format('truetype'),
+		url('//at.alicdn.com/t/font_2165213_x9u1ircxxbq.svg#iconfont') format('svg');
+}
+
+@mixin iconfont($content, $fontsize: rem(16)) {
+	content: $content;
+	font-family: 'iconfont' !important;
+	font-size: $fontsize;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-stroke-width: 0.2px;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+%vh100 {
+	height: 100vh;
+	height: calc(var(--vh, 1vh) * 100);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+*,
+:after,
+:before {
+	box-sizing: border-box;
+}
+
+li {
+	list-style: none;
+}
